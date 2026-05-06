@@ -5,25 +5,25 @@ import java.util.HashMap;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        int[] nums = {1,2,3,4};
+        int[] nums = {2,2,3,4};
 
         System.out.println(Arrays.toString(productExceptSelf(nums)));
     }
 
     public static int[] productExceptSelf(int[] nums) {
-        int[] result = new int[nums.length];
+        int[] left = new int[nums.length];
+        left[0] = 1;
+        int right = 1;
 
-        for (int i = 0; i < nums.length; i++){
-            int product = 1;
-
-            for (int j = 0; j < nums.length; j++){
-                if (i != j){
-                    product *= nums[j];
-                }
-            }
-            result[i] = product;
+        for (int i = 1; i < nums.length; i++){
+            left[i] = nums[i - 1] * left[i - 1];
         }
 
-        return result;
+        for (int i = nums.length - 1; i >= 0; i--){
+            left[i] = left[i] * right;
+            right *= nums[i];
+        }
+
+        return left;
     }
 }
