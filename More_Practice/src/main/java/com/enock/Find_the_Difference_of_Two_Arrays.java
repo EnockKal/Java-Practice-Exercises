@@ -4,10 +4,6 @@ import java.util.*;
 
 public class Find_the_Difference_of_Two_Arrays {
     public static void main(String[] args) {
-//        int[] nums1 = {1, 2, 3};
-//        int[] nums2 = {2, 4, 6};
-//        int[] nums1 = {1, 2, 3, 3};
-//        int[] nums2 = {1, 1, 2, 2};
 //        int[] nums1 = {1, 2, 2, 5, 7};
 //        int[] nums2 = {2, 3, 5, 5, 8};
         int[] nums1 = {1, 2, 3, 4, 5};
