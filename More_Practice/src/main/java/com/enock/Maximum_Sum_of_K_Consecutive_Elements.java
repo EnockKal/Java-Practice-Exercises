@@ -12,12 +12,12 @@ public class Maximum_Sum_of_K_Consecutive_Elements {
         int window = 0;
         int maxSum = nums.length + 1;
 
-        for (int i = 0; i < k; i++){  // O(n)
+        for (int i = 0; i < k; i++){  // O(k)
             window += nums[i];
         }
         maxSum = window;
 
-        for (int i = k; i < nums.length; i++){ //O(n)
+        for (int i = k; i < nums.length; i++){ // O(n - k)
             window = window - nums[i - k] + nums[i];
 
             if (window > maxSum) maxSum = window;
@@ -26,7 +26,7 @@ public class Maximum_Sum_of_K_Consecutive_Elements {
         return maxSum;
     }
 }
-// time: O(n) both array are O(n) so O(n) + O(n) = O(n)
+// time: O(n) both array are: O(k) + O(n - k) = O(n)
 // space O(1) no memory grow with the input
 
 
