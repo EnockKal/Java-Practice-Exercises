@@ -11,12 +11,12 @@ public class Longest_Substring_Without_Repeating_Characters {
     }
 
     private static int longestSubstring(String s) {
-        Set<Character> set = new HashSet<>();
+        Set<Character> set = new HashSet<>(); // O(1) bcz of the fixed ASCII alphabet
 
         int left = 0;
         int maxLength = 0;
 
-        for (int i = 0; i < s.length(); i++){
+        for (int i = 0; i < s.length(); i++){ // O(n)
             while (set.contains(s.charAt(i))){
                 set.remove(s.charAt(left));
                 left++;
@@ -33,3 +33,5 @@ public class Longest_Substring_Without_Repeating_Characters {
         return maxLength;
     }
 }
+// time: O(n)
+// space: O(1) bcz of the fixed ASCII alphabet (the array always has 128 elements)
